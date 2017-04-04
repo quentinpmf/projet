@@ -10,6 +10,33 @@ class TownsController < ApplicationController
   # GET /towns/1
   # GET /towns/1.json
   def show
+    myForecast = ForecastIO.forecast(@town.latitude, @town.longitud)
+    
+    weatherFetched = false
+    temperatureFetched = false
+    if myForecast
+      dayForecast = myForecast.currently
+      if dayForecast
+        if dayForecast.icon
+          @weatherIconName = dayForecast.icon
+          weatherFetched = true
+        end
+        if dayForecast.temperature
+          @weatherTemperature = toCelsus(dayForecast.temperature)
+          temperatureFetched = true
+        end
+      end
+    end
+    
+    if !weatherFetched
+      @weatherIconName = nil
+    end
+    
+    if !temperatureFetched
+      @weatherTemperature = nil
+    end
+    
+    @temperatureColor = getColorTemperature(@weatherTemperature)
   end
 
   # GET /towns/new
