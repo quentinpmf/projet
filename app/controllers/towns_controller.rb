@@ -10,7 +10,7 @@ class TownsController < ApplicationController
   # GET /towns/1
   # GET /towns/1.json
   def show
-    weatherForecast = ForecastIO.forecast(@city.latitude, @city.longitude)
+    weatherForecast = ForecastIO.forecast(@town.latitude, @town.longitude)
     weather = false
     temperature = false
        if weatherForecast
