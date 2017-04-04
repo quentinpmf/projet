@@ -27,12 +27,12 @@ class TownsController < ApplicationController
           end
        end
        if !weather
-         @weatherSummary = "Unavailable"
+         @weatherSummary = "Indisponible"
        end
        if !temperature
-         @weatherTemperature = "Unavailable"
+         @weatherTemperature = "Indisponible"
        end
-  end
+    end
 
   # GET /towns/new
   def new
