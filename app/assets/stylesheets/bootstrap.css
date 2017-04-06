@@ -186,9 +186,6 @@
 .bootstrap textarea {
   overflow: auto;
 }
-.bootstrap optgroup {
-  font-weight: bold;
-}
 .bootstrap table {
   border-collapse: collapse;
   border-spacing: 0;
