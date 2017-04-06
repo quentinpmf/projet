@@ -6,8 +6,6 @@ gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -21,6 +19,10 @@ gem 'nominatim', '~> 0.0.6'
 gem 'vcr', '~> 3.0', '>= 3.0.3'
 # forecast pour la meteo
 gem 'forecast_io', '~> 2.0', '>= 2.0.1'
+
+# Use SCSS for stylesheets and bootstrap
+gem 'sass-rails', '~> 5.0', '>= 5.0.4'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
