@@ -1,29 +1,48 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Nom:</strong>
-  <%= @town.nom %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @town.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @town.longitude %>
-</p>
-
-<p>
-   <strong>Weather:</strong>
-   <%= @weatherToday %>
-</p>
- 
-<p>
-   <strong>Température:</strong>
-   <%= @weatherTemperature %> °C
-</p>
-
-<%= link_to 'Edit', edit_town_path(@town) %> |
-<%= link_to 'Back', towns_path %>
+<div class="bootstrap">
+  <div class="container">
+    
+    <div class="row">
+      <p id="notice"><%= notice %></p>
+    </div>
+    <div class="row">
+      <p>
+        <strong>Nom:</strong>
+        <%= @town.nom %>
+      </p>
+    </div>
+    <div class="row">
+      <p>
+        <strong>Latitude:</strong>
+        <%= @town.latitude %>
+      </p>
+    </div>
+    <div class="row">
+      <p>
+        <strong>Longitude:</strong>
+        <%= @town.longitude %>
+      </p>
+    </div>
+    <div class="row">
+      <p>
+         <strong>Météo:</strong>
+         <%= @meteo_etat %>
+      </p>
+    </div>
+    <div class="row">
+      <p>
+         <strong>Temp:</strong>
+         <%= @meteo_temperature %>
+      </p>
+    </div>
+    <div class="row">
+      <p>
+         <strong>Icone:</strong>
+         <%= @meteo_icon %>
+      </p>
+    </div>
+    <div class="row">
+        <%= link_to 'Edit', edit_town_path(@town) %> |
+        <%= link_to 'Back', towns_path %>
+    </div>
+  </div>
+</div>

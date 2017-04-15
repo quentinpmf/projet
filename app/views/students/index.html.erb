@@ -1,45 +1,46 @@
-<h1>Listing students</h1>
+<div class="bootstrap">
+  <div class="container">
+    
+    <h1>Listing students</h1>
+    <div class="row">
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th colspan="3">Actions</th>
+          </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Birthday</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @students.each do |student| %>
-      <tr>
-        <td><%= student.name %></td>
-        <td><%= student.birthday %></td>
-        <td>
-          <div class="bootstrap">
-            <button>
-               <%= link_to 'Show', student %>
-            </button>
-          </div>
-        </td>
-        <td>
-          <div class="bootstrap">
-            <button>
-              <%= link_to 'Edit', edit_student_path(student) %>
-            </button>
-          </div>
-        </td>
-        <td>
-          <div class="bootstrap">
-            <button>
-              <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </button>
-          </div>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Student', new_student_path %>
+        <tbody>
+          <% @students.each do |student| %>
+            <tr>
+              <td><%= student.name %></td>
+              <td><%= student.birthday %></td>
+              <td>
+                <button>
+                   <%= link_to 'Show', student %>
+                </button>
+              </td>
+              <td>
+                <button>
+                  <%= link_to 'Edit', edit_student_path(student) %>
+                </button>
+              </td>
+              <td>
+                <button>
+                  <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </button>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      
+    </div>
+    <div class="row">
+      <%= link_to 'New Student', new_student_path %>
+    </div>
+  </div>
+</div>

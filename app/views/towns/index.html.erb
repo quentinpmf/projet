@@ -1,47 +1,39 @@
-<h1>Listing towns</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @towns.each do |town| %>
-      <tr>
-        <td><%= town.nom %></td>
-        <td><%= town.latitude %></td>
-        <td><%= town.longitude %></td>      
-        <td>
-          <div class="bootstrap">
-            <button>
-               <%= link_to 'Show', town %>
-            </button>
-          </div>
-        </td>
-        <td>
-          <div class="bootstrap">
-            <button>
-               <%= link_to 'Edit', edit_town_path(town) %>
-            </button>
-          </div>
-         </td>
-        <td>
-          <div class="bootstrap">
-            <button>
-               <%= link_to 'Destroy', town, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </button>
-          </div>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Town', new_town_path %>
+<div class="bootstrap">
+  <div class="container">
+    
+    <h1>Listing towns</h1>
+    <div class="row">
+      <a class="atownplus" href="/towns/new"><div class="col-sm-12 townplus">+</div></a>
+      
+      <% @towns.each do |town| %>
+      
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2 infotowns">
+          <div class="row">
+              <div class="col-sm-12 name">
+                <h2>
+                  <%= town.nom %>
+                </h2>
+              </div>
+              <div class="col-sm-7"><%= town.weather.summary %></div>
+              <div class="col-sm-5"><b><%= town.weather.temperature %> °C</b></div>
+              <div class="col-sm-6"><%= town.latitude %></div>
+              <div class="col-sm-6"><%= town.longitude %></div>
+              <div class="col-sm-12 infotownsactions">
+                <button>
+                  <%= link_to 'Show', town %>
+                </button>
+                <button>
+                 <%= link_to 'Edit', edit_town_path(town) %>
+                </button>
+               <button>
+                 <%= link_to 'Destroy', town, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </button>
+              </div>
+           </div>
+        </div>
+      
+      <% end %>
+    </div>
+  </div>
+</div>

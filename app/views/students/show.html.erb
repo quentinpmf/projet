@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
-
-<p>
-  <strong>Birthday:</strong>
-  <%= @student.birthday %>
-</p>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<div class="bootstrap">
+  <div class="container">
+    
+    <div class="row">
+      <p id="notice"><%= notice %></p>
+    </div>
+    <div class="row">
+      <p>
+        <strong>Name:</strong>
+        <%= @student.name %>
+      </p>
+    </div>
+    <div class="row">
+      <p>
+        <strong>Birthday:</strong>
+        <%= @student.birthday %>
+      </p>
+    </div>
+    <div class="row">
+        <%= link_to 'Edit', edit_student_path(@student) %> |
+        <%= link_to 'Back', students_path %>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,12 @@
 class Town < ActiveRecord::Base
   before_validation :geocode
 
-  private 
+  
+  def weather
+    ForecastIO.forecast(self.latitude, self.longitude).currently
+  end
+  
+  private #code en dessous est privé
     def geocode  
       returnList = Nominatim.search(self.nom).limit(1)
       townInfo = returnList.first
@@ -10,4 +15,5 @@ class Town < ActiveRecord::Base
         self.longitude = townInfo.longitude
       end
     end
+  
 end
