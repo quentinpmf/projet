@@ -2,7 +2,7 @@ class Town < ActiveRecord::Base
   before_validation :geocode
 
   
-  def weather
+  def meteo
     ForecastIO.forecast(self.latitude, self.longitude).currently
   end
   
