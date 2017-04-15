@@ -25,19 +25,13 @@
     <div class="row">
       <p>
          <strong>Météo:</strong>
-         <%= @meteo_etat %>
+         <%= @town.weather.summary %>
       </p>
     </div>
     <div class="row">
       <p>
          <strong>Temp:</strong>
-         <%= @meteo_temperature %>
-      </p>
-    </div>
-    <div class="row">
-      <p>
-         <strong>Icone:</strong>
-         <%= @meteo_icon %>
+         <%= @town.weather.temperature %>
       </p>
     </div>
     <div class="row">
