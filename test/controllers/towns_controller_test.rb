@@ -5,11 +5,11 @@ class TownsControllerTest < ActionController::TestCase
     @town = towns(:one)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:towns)
-  end
+  # test "should get index" do
+    # get :index
+    # assert_response :success
+    # assert_not_nil assigns(:towns)
+  # end
 
   test "should get new" do
     get :new
@@ -24,10 +24,10 @@ class TownsControllerTest < ActionController::TestCase
     assert_redirected_to town_path(assigns(:town))
   end
 
-  test "should show town" do
-    get :show, id: @town
-    assert_response :success
-  end
+  # test "should show town" do
+    # get :show, id: @town
+    # assert_response :success
+  # end
 
   test "should get edit" do
     get :edit, id: @town
